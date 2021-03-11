@@ -66,6 +66,9 @@
           <div class="uk-grid-large uk-margin-large" uk-grid>
             <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
               <div class="uk-panel uk-width-1-1">
+                <h3 class="uk-h3 uk-margin-small uk-text-left@m uk-text-center">
+                  Standard
+                </h3>
                 <h3 class="uk-h1 uk-margin-small uk-text-left@m uk-text-center">
                   3 HR Charter
                 </h3>
@@ -100,72 +103,25 @@
             <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
               <div class="uk-panel uk-width-1-1">
                 <div
+                  ref="threeHour"
                   uk-slideshow="minHeight: 610;"
                   class="uk-margin uk-slideshow"
                 >
                   <div class="uk-position-relative">
-                    <ul class="uk-slideshow-items">
-                      <li tabindex="-1">
+                    <ul
+                      class="uk-slideshow-items"
+                      v-if="threeHourGallery.length > 0"
+                    >
+                      <li
+                        v-for="(img, index) in threeHourGallery"
+                        :key="index"
+                        tabindex="-1"
+                      >
                         <img
-                          class="uk-cover"
                           alt=""
                           uk-img="target: !.uk-slideshow-items"
                           uk-cover
-                          src="../assets/images/3hr-1.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-2.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-3.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-4.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-5.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-6.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-7.jpg"
+                          :src="img.pathLong"
                         />
                       </li>
                     </ul>
@@ -215,7 +171,7 @@
                   class="uk-panel uk-margin-medium uk-text-left@m uk-text-center"
                 >
                   Special events like birthdays, anniversaries, engagements,
-                  weddings, valentines and celebrations of life abouard
+                  weddings, valentines and celebrations of life aboard
                   Adventure81 are our specialty! Allow us to customize a
                   memorable experience along the gorgeous waters of Naples Bay
                   Resort, Port Royal, Dome Homes and all coastline of Marco
@@ -238,45 +194,25 @@
             <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
               <div class="uk-panel uk-width-1-1">
                 <div
+                  ref="custom"
                   uk-slideshow="minHeight: 610;"
                   class="uk-margin uk-slideshow"
                 >
                   <div class="uk-position-relative">
-                    <ul class="uk-slideshow-items">
-                      <li tabindex="-1">
+                    <ul
+                      class="uk-slideshow-items"
+                      v-if="customGallery.length > 0"
+                    >
+                      <li
+                        v-for="(img, index) in customGallery"
+                        :key="index"
+                        tabindex="-1"
+                      >
                         <img
-                          class="uk-cover"
                           alt=""
                           uk-img="target: !.uk-slideshow-items"
                           uk-cover
-                          src="../assets/images/custom-1.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/custom-2.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/custom-3.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/custom-4.jpg"
+                          :src="img.pathLong"
                         />
                       </li>
                     </ul>
@@ -352,45 +288,25 @@
               </div>
               <div class="uk-width-1-2@m">
                 <div
+                  ref="wedding"
                   uk-slideshow="minHeight: 610;"
                   class="uk-margin uk-slideshow"
                 >
                   <div class="uk-position-relative">
-                    <ul class="uk-slideshow-items">
-                      <li tabindex="-1">
+                    <ul
+                      class="uk-slideshow-items"
+                      v-if="weddingGallery.length > 0"
+                    >
+                      <li
+                        v-for="(img, index) in weddingGallery"
+                        :key="index"
+                        tabindex="-1"
+                      >
                         <img
-                          class="uk-cover"
                           alt=""
                           uk-img="target: !.uk-slideshow-items"
                           uk-cover
-                          src="../assets/images/wedding-1.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/wedding-2.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/wedding-3.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/wedding-4.jpg"
+                          :src="img.pathLong"
                         />
                       </li>
                     </ul>
@@ -459,36 +375,25 @@
             <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
               <div class="uk-panel uk-width-1-1">
                 <div
+                  ref="private"
                   uk-slideshow="minHeight: 610;"
                   class="uk-margin uk-slideshow"
                 >
                   <div class="uk-position-relative">
-                    <ul class="uk-slideshow-items">
-                      <li tabindex="-1">
+                    <ul
+                      class="uk-slideshow-items"
+                      v-if="privateGallery.length > 0"
+                    >
+                      <li
+                        v-for="(img, index) in privateGallery"
+                        :key="index"
+                        tabindex="-1"
+                      >
                         <img
-                          class="uk-cover"
                           alt=""
                           uk-img="target: !.uk-slideshow-items"
                           uk-cover
-                          src="../assets/images/private-1.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-2.jpg"
-                        />
-                      </li>
-                      <li tabindex="-1">
-                        <img
-                          class="uk-cover"
-                          alt=""
-                          uk-img="target: !.uk-slideshow-items"
-                          uk-cover
-                          src="../assets/images/3hr-7.jpg"
+                          :src="img.pathLong"
                         />
                       </li>
                     </ul>
@@ -528,53 +433,7 @@
           class="tm-grid-expand uk-grid-column-small uk-margin-small"
           uk-grid
         >
-          <div
-            class="uk-grid-item-match uk-flex-middle uk-width-2-3@s uk-first-column"
-          >
-            <div class="uk-panel uk-width-1-1">
-              <div class="uk-margin uk-text-center">
-                <div
-                  class="uk-child-width-1-1 uk-child-width-1-2@s uk-grid-small"
-                  uk-grid
-                >
-                  <div class="uk-first-column">
-                    <div class="uk-inline-clip uk-light">
-                      <img alt="" uk-img src="../assets/boat-1.jpg" />
-                    </div>
-                  </div>
-                  <div>
-                    <div class="uk-inline-clip uk-light">
-                      <img alt="" uk-img src="../assets/boat-2.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@s">
-            <div class="uk-panel uk-width-1-1">
-              <h3 class="uk-h4 uk-text-center uk-margin-remove-bottom">
-                On the beautiful waters of Marco Island
-              </h3>
-              <hr class="uk-divider-small uk-text-center" />
-              <div
-                class="uk-panel uk-margin uk-width-medium uk-margin-auto uk-text-center"
-              >
-                Let us take you on a day time or dinner sunset cruise on the
-                beautiful waters of Naples Bay, Port Royal, Dome Homes and all
-                of Marco Island, Naples, Isles of Capri and 10,000 Islands along
-                the Golf of Mexico coast line with daily excursions on our 40'
-                yacht.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="tm-grid-expand uk-grid-column-small uk-margin-small"
-          uk-grid
-        >
-          <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@s">
+          <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@s">
             <div class="uk-panel uk-width-1-1">
               <div class="uk-margin-remove-vertical">
                 <img
@@ -587,16 +446,18 @@
             </div>
           </div>
           <div
-            class="uk-grid-item-match uk-flex-middle uk-width-1-3@s uk-flex-first@s uk-first-column"
+            class="uk-grid-item-match uk-flex-middle uk-width-1-2@s uk-flex-first@s uk-margin"
           >
             <div class="uk-panel uk-width-1-1">
-              <h3 class="uk-h4 uk-text-center">Joshua James Skinner</h3>
+              <h3 class="uk-h3 uk-text-center">
+                Joshua James Skinner
+              </h3>
               <hr class="uk-divider-small uk-text-center" />
               <div
                 class="uk-panel uk-margin uk-width-medium uk-margin-auto uk-text-center"
               >
                 Positive, soft spoken and funny. Josh is originally from
-                Minocqua Wisconsin. He moved to Florida to pursue his dreams of
+                Minocqua, Wisconsin. He moved to Florida to pursue his dreams of
                 living and working on the water. Josh then became a Licensed
                 Master Captain and PADI Dive instructor. With careful
                 consideration he bought the 40' yacht to offer dream vacations
@@ -610,32 +471,63 @@
           class="tm-grid-expand uk-grid-column-small uk-margin-small"
           uk-grid
         >
-          <div
-            class="uk-grid-item-match uk-flex-middle uk-width-2-3@s uk-flex-first@s"
-          >
+          <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@s">
             <div class="uk-panel uk-width-1-1">
-              <div class="uk-margin-remove-vertical">
-                <img
-                  alt=""
-                  uk-img
-                  class="aboutImg top"
-                  src="../assets/luxury.jpg"
-                />
+              <div
+                ref="boat"
+                uk-slideshow="minHeight: 610;"
+                class="uk-margin uk-slideshow"
+              >
+                <div class="uk-position-relative">
+                  <ul class="uk-slideshow-items" v-if="boatGallery.length > 0">
+                    <li
+                      v-for="(img, index) in boatGallery"
+                      :key="index"
+                      tabindex="-1"
+                    >
+                      <img
+                        class="uk-cover"
+                        alt=""
+                        uk-img="target: !.uk-slideshow-items"
+                        uk-cover
+                        :src="img.pathLong"
+                      />
+                    </li>
+                  </ul>
+                  <div class="uk-visible@s uk-light">
+                    <a
+                      class="uk-position-center-left uk-position-small uk-hidden-hover"
+                      href="#"
+                      uk-slidenav-previous
+                      uk-slideshow-item="previous"
+                    ></a>
+                    <a
+                      class="uk-position-center-right uk-position-small uk-hidden-hover"
+                      href="#"
+                      uk-slidenav-next
+                      uk-slideshow-item="next"
+                    ></a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="uk-grid-item-match uk-flex-middle uk-width-1-3@s uk-flex-first@s uk-first-column"
+            class="uk-grid-item-match uk-flex-middle uk-width-1-3@s uk-margin"
           >
             <div class="uk-panel uk-width-1-1">
-              <h3 class="uk-h4 uk-text-center">Luxury vacations</h3>
+              <h3 class="uk-h4 uk-text-center">
+                On the beautiful waters of Marco Island
+              </h3>
               <hr class="uk-divider-small uk-text-center" />
               <div
                 class="uk-panel uk-margin uk-width-medium uk-margin-auto uk-text-center"
               >
-                We offer standard and custom charters, with industries most
-                competitive pricing cruise which means everyone can experience
-                luxury vacations.
+                Let us take you on a day time or dinner sunset cruise on the
+                beautiful waters of Naples Bay, Port Royal, Dome Homes and all
+                of Marco Island, Naples, Isles of Capri and 10,000 Islands along
+                the Golf of Mexico coast line with daily excursions on our 40'
+                yacht.
               </div>
             </div>
           </div>
@@ -794,6 +686,7 @@
 
 <script>
 import axios from "axios";
+import UIkit from "uikit";
 
 import marcoislandBG from "../assets/marcoisland-dock-bg.jpg";
 
@@ -815,9 +708,32 @@ export default {
         images: null,
       },
     ],
+    threeHourGallery: [],
+    customGallery: [],
+    weddingGallery: [],
+    privateGallery: [],
+    boatGallery: [],
   }),
   mounted() {
+    this.import3hr(require.context("../assets/images/3hr/", true, /\.jpg$/));
+    this.importCustom(
+      require.context("../assets/images/custom/", true, /\.jpg$/)
+    );
+    this.importWedding(
+      require.context("../assets/images/wedding/", true, /\.jpg$/)
+    );
+    this.importPrivate(
+      require.context("../assets/images/private/", true, /\.jpg$/)
+    );
+    this.importBoat(require.context("../assets/images/boat/", true, /\.jpg$/));
     this.loadPic(this.instagram[0].insta);
+    setTimeout(() => {
+      UIkit.slideshow(this.$refs.threeHour).show(0);
+      UIkit.slideshow(this.$refs.custom).show(1);
+      UIkit.slideshow(this.$refs.wedding).show(1);
+      UIkit.slideshow(this.$refs.private).show(2);
+      UIkit.slideshow(this.$refs.boat).show(0);
+    }, 1000);
   },
   methods: {
     interestedIn(input) {
@@ -887,10 +803,47 @@ export default {
         );
     },
     fetchUsername: async function(username) {
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       return await fetch(
         `${proxyUrl}https://www.instagram.com/${username}/?__a=1`
       ).then((r) => r.json());
+    },
+    import3hr(r) {
+      r.keys().forEach((key) => {
+        this.threeHourGallery.push({
+          pathLong: r(key),
+          pathShort: key,
+        });
+      });
+    },
+    importCustom(r) {
+      r.keys().forEach((key) =>
+        this.customGallery.push({ pathLong: r(key), pathShort: key })
+      );
+    },
+    importWedding(r) {
+      r.keys().forEach((key) =>
+        this.weddingGallery.push({
+          pathLong: r(key),
+          pathShort: key,
+        })
+      );
+    },
+    importPrivate(r) {
+      r.keys().forEach((key) =>
+        this.privateGallery.push({
+          pathLong: r(key),
+          pathShort: key,
+        })
+      );
+    },
+    importBoat(r) {
+      r.keys().forEach((key) =>
+        this.boatGallery.push({
+          pathLong: r(key),
+          pathShort: key,
+        })
+      );
     },
   },
 };
