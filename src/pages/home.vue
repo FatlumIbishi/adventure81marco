@@ -538,7 +538,7 @@
     <section class="uk-section uk-section-large uk-padding-remove-top">
       <div class="uk-container uk-container-large">
         <h3 class="uk-h3 uk-text-left@m uk-text-center">Latest Instagram</h3>
-        <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <!-- <div class="uk-grid-small uk-flex-middle" uk-grid>
           <div class="uk-width-auto">
             <img
               class="uk-border-circle"
@@ -579,7 +579,19 @@
               />
             </a>
           </div>
+        </div> -->
+
+        <div
+          class="taggbox-container"
+          style="width:100%;height:100%;overflow: auto;"
+        >
+          <div
+            class="taggbox-socialwall"
+            data-wall-id="57709"
+            view-url="https://widget.taggbox.com/57709"
+          ></div>
         </div>
+
         <div class="uk-margin-top uk-text-left@m uk-text-center">
           <a
             class="uk-button uk-button-secondary uk-button-large"
@@ -605,6 +617,7 @@
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4699.828306657711!2d-81.72726112300585!3d25.981852533741353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88daef8596ccb7d7%3A0x9ffb99c7acee95da!2s387%20Capri%20Blvd%2C%20Naples%2C%20FL%2034113%2C%20USA!5e0!3m2!1sen!2sse!4v1604660147120!5m2!1sen!2sse"
                   frameborder="0"
                   style="border: 0"
+                  allowfullscreen=""
                   aria-hidden="false"
                   tabindex="0"
                   class="gmaps"
@@ -713,6 +726,13 @@ export default {
     boatGallery: [],
   }),
   mounted() {
+    let taggboxScript = document.createElement("script");
+    taggboxScript.setAttribute(
+      "src",
+      "https://widget.taggbox.com/embed.min.js"
+    );
+    document.head.appendChild(taggboxScript);
+
     this.import3hr(require.context("../assets/images/3hr/", true, /\.jpg$/));
     this.importCustom(
       require.context("../assets/images/custom/", true, /\.jpg$/)
@@ -724,7 +744,7 @@ export default {
       require.context("../assets/images/private/", true, /\.jpg$/)
     );
     this.importBoat(require.context("../assets/images/boat/", true, /\.jpg$/));
-    this.loadPic(this.instagram[0].insta);
+    // this.loadPic(this.instagram[0].insta);
     setTimeout(() => {
       UIkit.slideshow(this.$refs.threeHour).show(0);
       UIkit.slideshow(this.$refs.custom).show(1);
