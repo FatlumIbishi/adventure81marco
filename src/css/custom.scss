@@ -22,11 +22,11 @@ html {
   .uk-h1 {
     font-size: 3.625rem;
   }
-  
+
   .uk-h2 {
     font-size: 2.625rem;
   }
-  
+
   .uk-h3 {
     font-size: 1.625rem;
   }
@@ -62,24 +62,24 @@ h4 {
 
 .uk-navbar-dropdown-nav,
 .uk-navbar-item,
-.uk-navbar-nav>li>a,
+.uk-navbar-nav > li > a,
 .uk-navbar-toggle,
 .uk-nav-default,
 .uk-button,
 .uk-h5,
 h5,
-.uk-subnav>*> :first-child {
+.uk-subnav > * > :first-child {
   font-family: "Manrope", serif;
   text-transform: uppercase;
 }
 
-.uk-navbar-nav>li:hover>a,
-.uk-navbar-nav>li>a.uk-open,
-.uk-navbar-nav>li>a:focus,
-.uk-navbar-dropdown-nav>li>a:focus,
-.uk-navbar-dropdown-nav>li>a:hover,
-.uk-subnav>*>a:focus,
-.uk-subnav>*>a:hover,
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a.uk-open,
+.uk-navbar-nav > li > a:focus,
+.uk-navbar-dropdown-nav > li > a:focus,
+.uk-navbar-dropdown-nav > li > a:hover,
+.uk-subnav > * > a:focus,
+.uk-subnav > * > a:hover,
 .uk-link-muted a:hover,
 .uk-link-toggle:focus .uk-link-muted,
 .uk-link-toggle:hover .uk-link-muted,
@@ -89,7 +89,7 @@ a.uk-link-muted:hover,
   color: var(--main);
 }
 
-.uk-navbar-nav>li>a.active {
+.uk-navbar-nav > li > a.active {
   color: var(--main);
 }
 
@@ -166,7 +166,7 @@ a.uk-link-muted:hover,
 }
 
 /* Select Icon Fix */
-.uk-form-icon~.uk-select {
+.uk-form-icon ~ .uk-select {
   padding-left: 40px !important;
 }
 
@@ -238,7 +238,7 @@ a.uk-link-muted:hover,
   top: 0;
   width: 100%;
   position: absolute;
-  opacity: .5;
+  opacity: 0.5;
   height: 100%;
 }
 
@@ -291,4 +291,9 @@ a.uk-link-muted:hover,
   border-radius: 50px;
   padding: 13px 20px 13px 16px;
   left: -40px;
+}
+
+.gmaps {
+  height: 450px;
+  width: 100%;
 }
