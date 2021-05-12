@@ -13,11 +13,11 @@
           <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
               <li>
-                <a class="uk-navbar-toggle" href="#sv-mobile" uk-toggle>
+                <a class="uk-navbar-toggle" href="" uk-toggle>
                   <div
                     uk-navbar-toggle-icon
                     class="uk-icon uk-navbar-toggle-icon"
-                  ></div>
+                  />
                 </a>
                 <div ref="dropDownMenu" class="uk-navbar-dropdown uk-width">
                   <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -43,9 +43,9 @@
               <img height="50" alt="Adventure 81" />
             </router-link>
           </div>
-          <div class="uk-navbar-right menuPhone">
+          <a class="uk-navbar-right menuPhone" href="tel:+19207073585">
             <i class="fas fa-phone"></i>
-          </div>
+          </a>
         </nav>
       </div>
     </div>

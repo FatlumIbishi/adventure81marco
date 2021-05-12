@@ -26,16 +26,8 @@
                       class="uk-icon"
                       target="_blank"
                       rel="nofollow noopener"
-                      href=""
+                      href="https://www.facebook.com/Adventure81Marco/"
                     ><i class="fab fa-facebook-f" /></a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a
-                      class="uk-icon"
-                      target="_blank"
-                      rel="nofollow noopener"
-                      href=""
-                    ><i class="fab fa-linkedin-in" /></a>
                   </div>
                   <div>
                     <a
