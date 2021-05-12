@@ -3,13 +3,6 @@
     <section
       class="uk-section-secondary uk-section uk-flex uk-flex-middle hero uk-light"
     >
-      <!-- <video
-        src="../assets/adventure81web.mp4"
-        loop
-        muted
-        playsinline
-        uk-video="autoplay: inview"
-      ></video> -->
       <img src="../assets/hero.jpg" uk-img />
       <div class="uk-width-1-1">
         <div class="uk-container uk-container-large">
@@ -538,49 +531,6 @@
     <section class="uk-section uk-section-large uk-padding-remove-top">
       <div class="uk-container uk-container-large">
         <h3 class="uk-h3 uk-text-left@m uk-text-center">Latest Instagram</h3>
-        <!-- <div class="uk-grid-small uk-flex-middle" uk-grid>
-          <div class="uk-width-auto">
-            <img
-              class="uk-border-circle"
-              width="100"
-              height="100"
-              :src="instagram[0].profilePic"
-            />
-          </div>
-          <div class="uk-width-expand">
-            <h3 class="uk-card-title uk-margin-remove-bottom">
-              {{ instagram[0].insta }}
-            </h3>
-            <a
-              class="uk-button uk-button-secondary uk-button-small"
-              target="_blank"
-              rel="nofollow noopener"
-              :href="`https://www.instagram.com/${instagram[0].insta}/`"
-            >
-              Follow
-            </a>
-          </div>
-        </div>
-        <div
-          class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center uk-grid-medium"
-          uk-lightbox="animation: slide"
-          uk-grid
-        >
-          <div v-for="i in instagram[0].images" :key="i.node.id">
-            <a
-              :href="i.node.display_url"
-              class="uk-inline-clip uk-transition-toggle"
-              tabindex="0"
-              :data-caption="i.node.edge_media_to_caption.edges[0].node.text"
-            >
-              <img
-                :src="i.node.thumbnail_src"
-                class="uk-transition-scale-up uk-transition-opaque"
-              />
-            </a>
-          </div>
-        </div> -->
-
         <div
           class="taggbox-container"
           style="width:100%;height:100%;overflow: auto;"
@@ -597,7 +547,7 @@
             class="uk-button uk-button-secondary uk-button-large"
             target="_blank"
             rel="nofollow noopener"
-            :href="`https://www.instagram.com/${instagram[0].insta}/`"
+            :href="`https://www.instagram.com/${instagram.insta}/`"
           >
             Follow us on Instagram
           </a>
@@ -663,6 +613,16 @@
                   <label>Mail*</label>
                 </div>
                 <div class="inputPlaceholder">
+                  <input
+                    class="uk-input uk-form-large"
+                    type="tel"
+                    name="tel"
+                    v-model="phoneMsg"
+                    placeholder=" "
+                  />
+                  <label>Phone No. (optional)</label>
+                </div>
+                <div class="inputPlaceholder">
                   <textarea
                     class="uk-textarea uk-form-large"
                     type="text"
@@ -708,17 +668,16 @@ export default {
     nameMsg: "",
     emailMsg: "",
     messageMsg: "",
+    phoneMsg: "",
     loadingTxt: false,
     errorTxt: "",
-    instagram: [
-      {
-        id: "adventure81marco",
-        insta: "adventure81marco",
-        fullName: "Adventure 81",
-        profilePic: null,
-        images: null,
-      },
-    ],
+    instagram: {
+      id: "adventure81marco",
+      insta: "adventure81marco",
+      fullName: "Adventure 81 Marco",
+      profilePic: null,
+      images: null,
+    },
     threeHourGallery: [],
     customGallery: [],
     weddingGallery: [],
@@ -744,7 +703,6 @@ export default {
       require.context("../assets/images/private/", true, /\.jpg$/)
     );
     this.importBoat(require.context("../assets/images/boat/", true, /\.jpg$/));
-    // this.loadPic(this.instagram[0].insta);
     setTimeout(() => {
       UIkit.slideshow(this.$refs.threeHour).show(0);
       UIkit.slideshow(this.$refs.custom).show(1);
@@ -787,12 +745,13 @@ export default {
           from: this.emailMsg,
           _subject: `${this.nameMsg} | Message from adventure81marco.com`,
           message: this.messageMsg,
-          option: this.radioMsg,
+          phone: this.phoneMsg,
         })
         .then(() => {
           this.nameMsg = "";
           this.emailMsg = "";
           this.messageMsg = "";
+          this.phoneMsg = "";
         })
         .catch((error) => {
           if (error.response) {
@@ -807,24 +766,6 @@ export default {
     checkMoz() {
       if (window.navigator.userAgent.indexOf("Firefox") > 0) return 1;
       return 0;
-    },
-    loadPic: async function(username) {
-      var pic = await this.fetchUsername(username);
-      this.instagram
-        .filter((o) => o.insta === username)
-        .forEach((o) => (o.profilePic = pic.graphql.user.profile_pic_url_hd));
-      this.instagram
-        .filter((o) => o.insta === username)
-        .forEach(
-          (o) =>
-            (o.images = pic.graphql.user.edge_owner_to_timeline_media.edges)
-        );
-    },
-    fetchUsername: async function(username) {
-      const proxyUrl = "";
-      return await fetch(
-        `${proxyUrl}https://www.instagram.com/${username}/?__a=1`
-      ).then((r) => r.json());
     },
     import3hr(r) {
       r.keys().forEach((key) => {
