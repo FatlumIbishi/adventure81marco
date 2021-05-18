@@ -97,7 +97,7 @@
               <div class="uk-panel uk-width-1-1">
                 <div
                   ref="threeHour"
-                  uk-slideshow="minHeight: 610;"
+                  uk-slideshow
                   class="uk-margin uk-slideshow"
                 >
                   <div class="uk-position-relative">
@@ -186,11 +186,7 @@
             </div>
             <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
               <div class="uk-panel uk-width-1-1">
-                <div
-                  ref="custom"
-                  uk-slideshow="minHeight: 610;"
-                  class="uk-margin uk-slideshow"
-                >
+                <div ref="custom" uk-slideshow class="uk-margin uk-slideshow">
                   <div class="uk-position-relative">
                     <ul
                       class="uk-slideshow-items"
@@ -280,11 +276,7 @@
                 </div>
               </div>
               <div class="uk-width-1-2@m">
-                <div
-                  ref="wedding"
-                  uk-slideshow="minHeight: 610;"
-                  class="uk-margin uk-slideshow"
-                >
+                <div ref="wedding" uk-slideshow class="uk-margin uk-slideshow">
                   <div class="uk-position-relative">
                     <ul
                       class="uk-slideshow-items"
@@ -367,11 +359,7 @@
             </div>
             <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
               <div class="uk-panel uk-width-1-1">
-                <div
-                  ref="private"
-                  uk-slideshow="minHeight: 610;"
-                  class="uk-margin uk-slideshow"
-                >
+                <div ref="private" uk-slideshow class="uk-margin uk-slideshow">
                   <div class="uk-position-relative">
                     <ul
                       class="uk-slideshow-items"
@@ -466,11 +454,7 @@
         >
           <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@s">
             <div class="uk-panel uk-width-1-1">
-              <div
-                ref="boat"
-                uk-slideshow="minHeight: 610;"
-                class="uk-margin uk-slideshow"
-              >
+              <div ref="boat" uk-slideshow class="uk-margin uk-slideshow">
                 <div class="uk-position-relative">
                   <ul class="uk-slideshow-items" v-if="boatGallery.length > 0">
                     <li
@@ -620,7 +604,7 @@
                     v-model="phoneMsg"
                     placeholder=" "
                   />
-                  <label>Phone No. (optional)</label>
+                  <label>Phone No.*</label>
                 </div>
                 <div class="inputPlaceholder">
                   <textarea
@@ -733,10 +717,13 @@ export default {
       if (!this.emailMsg) {
         return (this.errorTxt = "Please type your email");
       }
+      if (!this.phoneMsg) {
+        return (this.errorTxt = "Please type your phone number");
+      }
       // if (!this.getVerification) {
       //   return this.errorTxt = "reCAPTCHA not done!"
       // }
-      if (this.nameMsg && this.emailMsg) {
+      if (this.nameMsg && this.emailMsg && this.phoneMsg) {
         this.loadingTxt = true;
       }
       axios

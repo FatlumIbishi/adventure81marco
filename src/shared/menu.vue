@@ -40,7 +40,7 @@
                   :class="{ menuPhone: mobile, menuBtn: desktop }"
                   href="tel:+19207073585"
                 >
-                  <span class="uk-visible@m">+1 920-707-3585</span>
+                  <span class="uk-visible@m">Text us: +1 920-707-3585</span>
                   <i class="fas fa-phone uk-hidden@m"></i>
                 </a>
               </li>
