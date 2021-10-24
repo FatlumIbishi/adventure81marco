@@ -74,12 +74,10 @@
                   class="uk-panel uk-margin-medium uk-text-left@m uk-text-center"
                 >
                   Standard three hour daytime or sunset cruise at your
-                  fingertips all it is a call or text away. A minimum of 4
-                  guests and a maximum of 6 is required, $100 per guest. Cruise
-                  includes snacks and appetizers as well as champagne, mimosas,
-                  white wine, beer and soft drinks. Just bring sunblock, we'll
-                  take care of the rest. Additional hours are avaliable upon
-                  request.
+                  fingertips all it is a call or text away. Cruise includes
+                  snacks and appetizers as well as champagne, mimosas, white
+                  wine, beer and soft drinks. Just bring sunblock, we'll take
+                  care of the rest. Additional hours are avaliable upon request.
                 </div>
                 <div class="uk-text-left@m uk-text-center">
                   <a
@@ -571,7 +569,7 @@
                   920-707-3585</a
                 >
               </div>
-              <form
+              <!-- <form
                 v-if="!loadingTxt"
                 @submit.prevent="sendEmail"
                 method="POST"
@@ -620,7 +618,7 @@
                 <div v-if="errorTxt" class="uk-alert-danger" uk-alert>
                   <p>{{ errorTxt }}</p>
                 </div>
-                <!-- <Recaptcha /> -->
+                <Recaptcha />
                 <button
                   type="submit"
                   class="uk-margin-top uk-button uk-button-secondary"
@@ -630,7 +628,7 @@
               </form>
               <p class="uk-text-large" v-if="loadingTxt">
                 Thank you, We'll be in touch soon!
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
